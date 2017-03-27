@@ -2,15 +2,18 @@ language: bash
 sudo: required 
   
 before_install: 
-     #export GCSFUSE_REPO=gcsfuse-`lsb_release -c -s`; 
-     echo 'deb http://packages.cloud.google.com/apt gcsfuse-trusty main' | sudo tee /etc/apt/sources.list.d/gcsfuse.list ;
-     curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add - ;
-     sudo apt-get update ;
-     sudo apt-get install -y gcsfuse postgresql; 
+    #export GCSFUSE_REPO=gcsfuse-`lsb_release -c -s`; 
+    echo 'deb http://packages.cloud.google.com/apt gcsfuse-trusty main' | sudo tee /etc/apt/sources.list.d/gcsfuse.list ;
+    curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add - ;
+    sudo apt-get update ;
+    sudo apt-get install -y gcsfuse postgresql; 
 
 install:
-        echo "install step";
+    echo "install step";
 
 script:
-        echo "script step";
+    echo "script step";
+        
+after_success:
+    codecov
 
