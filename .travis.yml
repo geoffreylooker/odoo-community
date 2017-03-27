@@ -8,7 +8,10 @@ before_install:
     echo 'deb http://packages.cloud.google.com/apt gcsfuse-trusty main' | sudo tee /etc/apt/sources.list.d/gcsfuse.list ;
     curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add - ;
     sudo apt-get update ;
-    sudo apt-get install -y gcsfuse ; 
+    sudo apt-get install -y gcsfuse ;
+    sudo apt-get install python-pip -y;
+    pip install --user codecov;  
+
 
 #install:
   #- bash echo "install step";
