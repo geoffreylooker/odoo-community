@@ -1,5 +1,7 @@
 language: bash 
 sudo: required 
+
+dist: trusty
   
 before_install: 
     #export GCSFUSE_REPO=gcsfuse-`lsb_release -c -s`; 
