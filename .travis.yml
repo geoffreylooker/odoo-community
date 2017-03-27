@@ -10,11 +10,11 @@ before_install:
     sudo apt-get update ;
     sudo apt-get install -y gcsfuse ; 
 
-install:
-  - bash echo "install step";
+#install:
+  #- bash echo "install step";
 
-script:
-  - bash echo "script step";
+#script:
+  #- bash echo "script step";
         
 after_success:
   - bash <(curl -s https://codecov.io/bash)
