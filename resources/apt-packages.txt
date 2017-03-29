@@ -1,0 +1,36 @@
+# utilities
+git
+wget
+# debian-provided interpreters
+python-pip
+#  python-dev
+python2.7
+python2.7-dev
+python3.4
+# Dependenies for third-party Python packages
+# with C-extensions
+##build-essential
+##libcurl4-openssl-dev
+#python-libxml2
+#python-libxslt1
+libxml2
+libxml2-dev
+#python-lxml
+libevent-dev
+libxslt1-dev
+libldap2-dev
+## Needed by odoo
+postgresql
+postgresql-client
+postgresql-server-dev-9.5
+libpq-dev
+# Needed by pylibmc
+libmemcached-dev
+libsasl2-2
+libsasl2-dev
+libsasl2-modules
+sasl2-bin
+# other
+npm
+#gcsfuse
+# this is via pip pysftp
