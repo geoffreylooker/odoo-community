@@ -40,12 +40,12 @@ pip install --upgrade pip virtualenv pysftp
 #########################
 
 # create and activate a virtualenv
-virtualenv venv
-. ./venv/bin/activate
+#virtualenv venv
+#. ./venv/bin/activate
 
 # install Odoo 10.0 nightly
-pip install -r https://raw.githubusercontent.com/odoo/odoo/10.0/requirements.txt
-pip install https://nightly.odoo.com/10.0/nightly/src/odoo_10.0.latest.zip
+#pip install -r https://raw.githubusercontent.com/odoo/odoo/10.0/requirements.txt
+#pip install https://nightly.odoo.com/10.0/nightly/src/odoo_10.0.latest.zip
 
 # check installed packages
 python -c "import odoo" ; || exit $?
