@@ -1,0 +1,12 @@
+# added to exclude git secrets
+.git-credentials
+.gitcookies
+secrets.tar
+venv/
+
+#ignore objects and archives, anywhere in the tree.
+#*.[oa]
+#*.[o]
+
+# except foo.html which is maintained by hand
+#!foo.html
