@@ -9,4 +9,4 @@ xargs -a <(awk '/^\s*[^#]/' 'resources/apt-packages.txt') -r -- \
 
 # Remove unneeded files.
 apt-get clean
-rm /var/lib/apt/lists/*_*
+# rm /var/lib/apt/lists/*_*
