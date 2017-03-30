@@ -25,7 +25,7 @@ export LANG=en_US.UTF-8
 
 # Upgrade pip (debian package version tends to run a few version behind) and
 # install virtualenv system-wide.
-pip install -q --upgrade pip virtualenv pysftp
+pip install --upgrade pip virtualenv pysftp
 
 # Less CSS via nodejs 
 # sudo apt-get install -y npm 
@@ -42,7 +42,7 @@ python -c "import odoo" && echo "odoo python module installed";
 #pip list | grep odoo ;
 
 # where should this go
-pip install -q --upgrade setuptools-odoo
+pip install --upgrade setuptools-odoo
 
 echo "installing wkhtmltox"
 #cd /tmp
