@@ -13,7 +13,7 @@ fi
 
 # Make sure we have git
 if [ ! -x /usr/bin/git ] ; then
-    DEBIAN_FRONTEND=noninteractive apt-get install git -yq
+    apt-get install git -yq
 fi
 
 TMP=$(mktemp -d -t tmp.XXXXXXXXXX)
