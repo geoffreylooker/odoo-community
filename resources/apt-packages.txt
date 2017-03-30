@@ -15,7 +15,7 @@ python3.4
 #python-libxslt1
 libxml2
 libxml2-dev
-#python-lxml
+python-lxml
 libevent-dev
 libxslt1-dev
 libldap2-dev
