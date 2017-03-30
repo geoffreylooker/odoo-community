@@ -6,7 +6,7 @@ secrets.tar
 *.aes
 *.pem
 !public_key.pem
-venv/
+*.env
 
 #ignore objects and archives, anywhere in the tree.
 #*.[oa]
