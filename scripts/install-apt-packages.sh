@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 apt-get update -q
 
 xargs -a <(awk '/^\s*[^#]/' 'resources/apt-packages.txt') -r -- \
