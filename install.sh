@@ -4,8 +4,6 @@ set -e
 
 readonly ODOO_DIR="/opt/odoo-dev"
 
-echo "running install script"
-
 # Must be root to use this tool
 if [[ ! $EUID -eq 0 ]];then
   if [ -x "$(command -v sudo)" ];then
@@ -16,6 +14,8 @@ if [[ ! $EUID -eq 0 ]];then
     exit 1
   fi
 fi
+
+echo "running install script"
 
 echo "installing apt packages"
 ./scripts/install-apt-packages.sh
