@@ -20,8 +20,7 @@ if [ ! -x /usr/bin/git ] ; then
     sudo apt-get install git
 fi
 
-mkdir -p repos && \
-  cd $TMP && \
+cd $TMP && \
   git clone https://github.com/geoffreylooker/odoo-community.git && \
   ./install.sh
 
