@@ -3,6 +3,7 @@
 set -o nounset
 set -o errexit
 set -o pipefail
+shopt -s globstar
 
 # Check that environment variables are set.
 if [[ -z ${SUPER_SECRET_PASSWORD} ]] ; then
