@@ -22,8 +22,8 @@ echo "Decrypting secrets"
 echo "-----------------------------------------------------------"
 # tar -cf secrets.tar one.txt two.txt three.txt
 # openssl aes-256-cbc -k "$SECRETS_PASSPHASE" -in secrets.tar -out secrets.tar.enc -e
-if [ -n "$SECRETS_PASSPHASE"  ]; then
-  openssl aes-256-cbc -k "$SECRETS_PASSPHASE" -in secrets.tar.enc -out secrets.tar -d
+if [ -n "$SECRETS_PASSPHRASE"  ]; then
+  openssl aes-256-cbc -k "$SECRETS_PASSPHRASE" -in secrets.tar.enc -out secrets.tar -d
   tar xvf secrets.tar -C "$TMP"
   source "$TMP/install.env"
 fi
