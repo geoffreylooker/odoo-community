@@ -5,7 +5,7 @@ set -e
 # Must be root to use this tool
 if [[ ! $EUID -eq 0 ]];then
   if [ -x "$(command -v sudo)" ];then
-    exec sudo bash "$0" "$@"
+    exec sudo -H bash "$0" "$@"
     exit $?
   else
     echo "::: sudo is needed to run this commands.  Please run this script as root or install sudo."
