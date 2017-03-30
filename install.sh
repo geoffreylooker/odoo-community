@@ -94,8 +94,8 @@ ln -sf /usr/local/bin/wkhtmltoimage /usr/bin
 echo "-----------------------------------------------------------"
 echo "Installing pip, virtualenv, setuptools-odoo & pysftp"
 echo "-----------------------------------------------------------"
-pip install --upgrade pip virtualenv
-# setuptools-odoo pysftp
+pip install --upgrade pip 
+pip install virtualenv setuptools setuptools-odoo pysftp
 
 echo "-----------------------------------------------------------"
 echo "Installing Odoo 10.0 from nightly build"
