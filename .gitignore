@@ -2,6 +2,10 @@
 .git-credentials
 .gitcookies
 secrets.tar
+*.enc
+*.aes
+*.pem
+!public_key.pem
 venv/
 
 #ignore objects and archives, anywhere in the tree.
