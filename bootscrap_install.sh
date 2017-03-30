@@ -20,5 +20,5 @@ TMP=$(mktemp -d -t tmp.XXXXXXXXXX)
 
 git clone https://github.com/geoffreylooker/odoo-community.git $TMP 
 cd $TMP
-source ./install.sh 2>&1 | tee $TMP/install.log
+./install.sh 2>&1 | tee $TMP/install.log
 
