@@ -24,8 +24,8 @@ echo "-----------------------------------------------------------"
 # openssl aes-256-cbc -k "$SECRETS_PASSPHASE" -in secrets.tar -out secrets.tar.enc -e
 if [ -n "$SECRETS_PASSPHRASE"  ]; then
   openssl aes-256-cbc -k "$SECRETS_PASSPHRASE" -in secrets.tar.enc -out secrets.tar -d
-  tar xvf secrets.tar -C "$TMP"
-  source "$TMP/install.env"
+  tar xvf secrets.tar 
+  source install.env
 fi
 
 echo "-----------------------------------------------------------"
