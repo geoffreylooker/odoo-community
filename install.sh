@@ -94,7 +94,8 @@ ln -sf /usr/local/bin/wkhtmltoimage /usr/bin
 echo "-----------------------------------------------------------"
 echo "Installing pip, virtualenv, setuptools-odoo & pysftp"
 echo "-----------------------------------------------------------"
-pip install --upgrade pip virtualenv setuptools-odoo pysftp
+pip install --upgrade pip virtualenv
+# setuptools-odoo pysftp
 
 echo "-----------------------------------------------------------"
 echo "Installing Odoo 10.0 from nightly build"
@@ -110,6 +111,8 @@ echo "-----------------------------------------------------------"
 export PIP_FIND_LINKS="https://wheelhouse.odoo-community.org/oca"
 pip install -r https://raw.githubusercontent.com/OCA/server-tools/10.0/requirements.txt
 pip install odoo10_addon_base_technical_features
+
+pip install pysftp
 pip install odoo10_addon_auto_backup
 
 echo "-----------------------------------------------------------"
