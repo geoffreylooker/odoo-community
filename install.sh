@@ -166,16 +166,25 @@ systemctl enable nginx
 service nginx restart
 
 echo "-----------------------------------------------------------"
+echo "Configuring Odoo Init File"
+echo "-----------------------------------------------------------"
+cp resources/odoo-init.sh /etc/init.d/odoo
+chmod 755 /etc/init.d/odoo
+chown root: /etc/init.d/odoo
+systemctl enable odoo
+service odoo restart
+
+echo "-----------------------------------------------------------"
 echo "Configuring iptables"
 echo "-----------------------------------------------------------"
-iptables -A INPUT -p tcp -m tcp --sport 80 -j ACCEPT
-iptables -A OUTPUT -p tcp -m tcp --dport 80 -j ACCEPT
+iptables -A INPUT -p tcp -m tcp --sport 8080 -j ACCEPT
+iptables -A OUTPUT -p tcp -m tcp --dport 8080 -j ACCEPT
 iptables-save
 
-# TODO: odoo init script
-# TODO: odoo init enable, start
 
 # TODO: gcsfuse install
+# TODO: clean up
+# TODO: upload log
 
 echo "-----------------------------------------------------------"
 echo "Finished Odoo installation"
