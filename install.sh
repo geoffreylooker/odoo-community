@@ -33,6 +33,14 @@ ln -sf /usr/bin/nodejs /usr/bin/node
 # Once npm is installed, use it to install less:
 npm install -g less
 
+# install Odoo 10.0 nightly
+pip install -r https://raw.githubusercontent.com/odoo/odoo/10.0/requirements.txt
+pip install https://nightly.odoo.com/10.0/nightly/src/odoo_10.0.latest.zip
+
+# check installed packages
+python -c "import odoo" && echo "odoo python module installed";
+#pip list | grep odoo ;
+
 echo "finished $0"
 
 exit 0
