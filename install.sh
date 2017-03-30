@@ -41,7 +41,8 @@ sudo -u postgres psql -c "ALTER USER postgres WITH PASSWORD '"$POSTGRES_DB_PWD"'
 sudo -u postgres psql -c "CREATE EXTENSION adminpack;" 2> /dev/null || true
 
 # ODOO_DB_PWD="$ODOO_DB_PWD" - should inherit from system as user names align
-sudo -u postgres psql -c "CREATE USER odoo CREATEDB NOCREATEUSER NOCREATEROLE;" 2> /dev/null || true
+#sudo -u postgres psql -c "CREATE USER odoo CREATEDB NOCREATEUSER NOCREATEROLE;" 2> /dev/null || true
+sudo -u postgres psql -c "CREATE ROLE odoo CREATEDB NOCREATEUSER NOCREATEROLE INHERIT LOGIN;" 2> /dev/null || true
 #sudo -u postgres -c "createuser -s odoo" 2> /dev/null || true
 # createuser --createdb --username postgres --no-createrole --no-superuser --pwprompt odoo ;
 
