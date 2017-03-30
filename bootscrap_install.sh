@@ -1,3 +1,4 @@
+#!/bin/bash
 
 readonly ODOO_DIR="/opt/odoo-dev"
 
