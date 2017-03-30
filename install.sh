@@ -20,6 +20,36 @@ echo "Installing Packages Dependencies"
 echo "-----------------------------------------------------------"
 ./scripts/install-apt-packages.sh
 
+echo "-----------------------------------------------------------"
+echo "Creating odoo system user"
+echo "-----------------------------------------------------------"
+adduser --quiet --system --shell=/bin/bash --home=/opt/odoo --gecos 'ODOO' --group odoo ;
+adduser --quiet odoo sudo ;
+chmod 750 /opt/odoo
+
+echo "-----------------------------------------------------------"
+echo "Creating odoo log directory"
+echo "-----------------------------------------------------------"
+mkdir -p /var/log/odoo
+chown odoo:odoo /var/log/odoo
+
+echo "-----------------------------------------------------------"
+echo "Configuring Postgres DB"
+echo "-----------------------------------------------------------"
+POSTGRES_DB_PWD="$POSTGRES_DB_PWD"
+sudo -u postgres psql -c "ALTER USER postgres WITH PASSWORD '"$POSTGRES_DB_PWD"';" 2> /dev/null || true
+sudo -u postgres psql -c "CREATE EXTENSION adminpack;" 2> /dev/null || true
+
+# ODOO_DB_PWD="$ODOO_DB_PWD" - should inherit from system as user names align
+sudo -u postgres psql -c "CREATE USER odoo CREATEDB NOCREATEUSER NOCREATEROLE;" || true
+#sudo -u postgres -c "createuser -s odoo" 2> /dev/null || true
+# createuser --createdb --username postgres --no-createrole --no-superuser --pwprompt odoo ;
+
+# maybe required?
+#/etc/ssl/private/ssl-cert-snakeoil.key
+#chmod 640 /etc/ssl/private/ssl-cert-snakeoil.key 
+
+
 # Setup locale. This prevents Python 3 IO encoding issues.
 export LANG=en_US.UTF-8
 
@@ -29,9 +59,13 @@ echo "-----------------------------------------------------------"
 pip install --upgrade pip virtualenv
 
 echo "-----------------------------------------------------------"
-echo "Installing Less CSS using"
+echo "Creating symlink for node"
 echo "-----------------------------------------------------------"
 ln -sf /usr/bin/nodejs /usr/bin/node
+
+echo "-----------------------------------------------------------"
+echo "Installing Less CSS using npm"
+echo "-----------------------------------------------------------"
 npm install -g less
 
 echo "-----------------------------------------------------------"
@@ -51,8 +85,9 @@ echo "-----------------------------------------------------------"
 echo "Installing wkhtmltox"
 echo "-----------------------------------------------------------"
 curl -sO http://download.gna.org/wkhtmltopdf/0.12/0.12.4/wkhtmltox-0.12.4_linux-generic-amd64.tar.xz ;
-tar -xvf wkhtmltox-0.12.4_linux-generic-amd64.tar.xz ;
-cp wkhtmltox/bin/wkhtmltopdf /usr/bin/ ;
+tar -xvf wkhtmltox-0.12.4_linux-generic-amd64.tar.xz -C /usr/local
+ln -sf /usr/local/bin/wkhtmltopdf /usr/bin
+ln -sf /usr/local/bin/wkhtmltoimage /usr/bin
 
 echo "-----------------------------------------------------------"
 echo "Installing Odoo 10.0 OCA addons"
@@ -62,23 +97,6 @@ pip install -r https://raw.githubusercontent.com/OCA/server-tools/10.0/requireme
 pip install odoo10_addon_base_technical_features
 pip install odoo10_addon_auto_backup
 
-echo "-----------------------------------------------------------"
-echo "Decrypting secrets"
-echo "-----------------------------------------------------------"
-# create tar: tar -cf secrets.tar xxx.key yyy.crt zzz.ca-bundle"
-# encrypt with: openssl aes-256-cbc -k public_key.pem -in secrets.tar -out secrets.tar -e
-if [ -n "$PRIVATE_KEY"  ]; then
-  openssl aes-256-cbc -k "$PRIVATE_KEY" -in secrets.tar.enc -out secrets.tar -d
-  tar xvf secrets.tar -C "$TMP"
-fi
-
-echo "-----------------------------------------------------------"
-echo "Installing ssl certificates"
-echo "-----------------------------------------------------------"
-mkdir -p /etc/nginx/ssl
-cp odoo_geoffreylooker_com.* /etc/nginx/ssl/ 
-chown -R root:root /etc/nginx/ssl
-chmod -R 600 /etc/nginx/ssl
 
 echo "-----------------------------------------------------------"
 echo "Finished Odoo installation"
