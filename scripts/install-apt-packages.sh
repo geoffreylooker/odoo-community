@@ -1,11 +1,9 @@
 #!/bin/bash
 
-set -e
-
-apt-get -qq update
+apt-get -q update
 
 xargs -a <(awk '/^\s*[^#]/' 'resources/apt-packages.txt') -r -- \
-    apt-get install --no-install-recommends -yqq
+    apt-get install --no-install-recommends -yq
 
 # Remove unneeded files.
 apt-get clean
