@@ -9,6 +9,6 @@ if [ ! -x /usr/bin/git ] ; then
     sudo apt-get install git -qy || { echo "installing GIT failed"; exit 1; } 
 fi
 
-cd $TMP && \
-  git clone https://github.com/geoffreylooker/odoo-community.git && \
-  ./install.sh
+git clone https://github.com/geoffreylooker/odoo-community.git $TMP 
+cd $TMP
+./install.sh
