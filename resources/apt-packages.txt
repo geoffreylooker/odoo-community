@@ -3,7 +3,7 @@ git
 wget
 # debian-provided interpreters
 python-pip
-#  python-dev
+# python-dev
 python2.7
 python2.7-dev
 python3.4
@@ -34,4 +34,4 @@ sasl2-bin
 npm
 node
 #gcsfuse
-# this is via pip pysftp
+nginx
