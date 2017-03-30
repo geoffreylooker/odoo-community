@@ -32,5 +32,6 @@ libsasl2-modules
 sasl2-bin
 # other
 npm
+node
 #gcsfuse
 # this is via pip pysftp
