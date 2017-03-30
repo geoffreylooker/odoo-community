@@ -9,8 +9,8 @@ python2.7-dev
 python3.4
 # Dependenies for third-party Python packages
 # with C-extensions
-##build-essential
-##libcurl4-openssl-dev
+build-essential
+libcurl4-openssl-dev
 #python-libxml2
 #python-libxslt1
 libxml2
