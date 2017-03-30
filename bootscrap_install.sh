@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -o nounset
+#set -o nounset
 set -o errexit
 set -o pipefail
 shopt -s globstar
@@ -11,13 +11,13 @@ if [[ -z ${PRIVATE_KEY} ]] ; then
   exit 1
 fi
 
-TMP=$(mktemp -d -t tmp.XXXXXXXXXX) || { echo "creating TMP failed"; exit 1; } 
-
 # Make sure we have git
 if [ ! -x /usr/bin/git ] ; then
-    sudo apt-get install git -qy || { echo "installing GIT failed"; exit 1; } 
+    DEBIAN_FRONTEND=noninteractive apt-get install git -yq
 fi
+
+TMP=$(mktemp -d -t tmp.XXXXXXXXXX)
 
 git clone https://github.com/geoffreylooker/odoo-community.git $TMP 
 cd $TMP
-./install.sh | tee $TMP/install.log
+./install.sh 2>&1 | tee $TMP/install.log
