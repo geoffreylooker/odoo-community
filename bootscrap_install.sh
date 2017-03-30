@@ -6,8 +6,8 @@ set -o pipefail
 shopt -s globstar
 
 # Check that environment variables are set.
-if [[ -z ${SUPER_SECRET_PASSWORD} ]] ; then
-  (>&2 echo "SUPER_SECRET_PASSWORD environment variable must be set.")
+if [[ -z ${PRIVATE_KEY} ]] ; then
+  (>&2 echo "PRIVATE_KEY environment variable must be set.")
   exit 1
 fi
 
