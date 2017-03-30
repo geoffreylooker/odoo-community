@@ -19,4 +19,4 @@ fi
 
 git clone https://github.com/geoffreylooker/odoo-community.git $TMP 
 cd $TMP
-./install.sh
+./install.sh | tee $TMP/install.log
