@@ -5,7 +5,6 @@ odoo-community
 ----------------  
     $ export DOMAIN="geoffreylooker.com"
     $ export HOST="odoo.geoffreylooker.com"
-    $ curl -sf https://raw.githubusercontent.com/geoffreylooker/odoo-community/build.sh | bash
- 
+    $ curl -sf https://raw.githubusercontent.com/geoffreylooker/odoo-community/master/build.sh | bash
  
  
