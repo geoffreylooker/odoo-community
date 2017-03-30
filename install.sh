@@ -62,6 +62,12 @@ pip install -r https://raw.githubusercontent.com/OCA/server-tools/10.0/requireme
 pip install odoo10_addon_base_technical_features
 pip install odoo10_addon_auto_backup
 
+# TODO: ssl certs via below
+#if [ -n "$super_secret_password"  ]; then
+#  openssl aes-256-cbc -k "$super_secret_password" -in secrets.tar.enc -out secrets.tar -d
+#  tar xvf secrets.tar -C "$HOME"
+#fi
+
 echo "-----------------------------------------------------------"
 echo "Finished Odoo installation"
 echo "-----------------------------------------------------------"
