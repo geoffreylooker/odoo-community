@@ -27,4 +27,12 @@ export LANG=en_US.UTF-8
 # install virtualenv system-wide.
 pip install --upgrade pip virtualenv pysftp
 
+# Less CSS via nodejs 
+# sudo apt-get install -y npm 
+ln -sf /usr/bin/nodejs /usr/bin/node
+# Once npm is installed, use it to install less:
+npm install -g less
+
+echo "finished $0"
+
 exit 0
