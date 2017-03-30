@@ -1,6 +1,14 @@
 #!/bin/bash
 
-readonly ODOO_DIR="/opt/odoo-dev"
+set -o nounset
+set -o errexit
+set -o pipefail
+
+# Check that environment variables are set.
+if [[ -z ${SUPER_SECRET_PASSWORD} ]] ; then
+  (>&2 echo "SUPER_SECRET_PASSWORD environment variable must be set.")
+  exit 1
+fi
 
 TMP=$(mktemp -d -t tmp.XXXXXXXXXX) || { echo "creating TMP failed"; exit 1; } 
 
