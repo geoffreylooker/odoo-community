@@ -22,7 +22,7 @@ libldap2-dev
 ## Needed by odoo
 postgresql
 postgresql-client
-postgresql-server-dev-9.5
+postgresql-server-dev-all
 libpq-dev
 # Needed by pylibmc
 libmemcached-dev
