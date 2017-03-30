@@ -25,7 +25,7 @@ export LANG=en_US.UTF-8
 
 # Upgrade pip (debian package version tends to run a few version behind) and
 # install virtualenv system-wide.
-pip install --upgrade pip virtualenv pysftp
+pip install -q --upgrade pip virtualenv pysftp
 
 # Less CSS via nodejs 
 # sudo apt-get install -y npm 
@@ -40,6 +40,17 @@ pip install https://nightly.odoo.com/10.0/nightly/src/odoo_10.0.latest.zip
 # check installed packages
 python -c "import odoo" && echo "odoo python module installed";
 #pip list | grep odoo ;
+
+# where should this go
+pip install -q --upgrade setuptools-odoo
+
+# and this?>
+#cd /tmp
+curl -sO http://download.gna.org/wkhtmltopdf/0.12/0.12.4/wkhtmltox-0.12.4_linux-generic-amd64.tar.xz ;
+# ls
+tar -xvf wkhtmltox-0.12.4_linux-generic-amd64.tar.xz ;
+cp wkhtmltox/bin/wkhtmltopdf /usr/bin/ ;
+
 
 echo "finished $0"
 
