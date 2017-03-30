@@ -63,15 +63,22 @@ pip install odoo10_addon_base_technical_features
 pip install odoo10_addon_auto_backup
 
 echo "-----------------------------------------------------------"
-echo "Installing ssl certificates"
+echo "Decrypting secrets"
 echo "-----------------------------------------------------------"
 # create tar: tar -cf secrets.tar xxx.key yyy.crt zzz.ca-bundle"
-# encrypt with: openssl aes-256-cbc -k "$super_secret_password" -in secrets.tar -out secrets.tar -e
-mkdir -p /etc/ssl/odoossl
-if [ -n "$super_secret_password"  ]; then
-  openssl aes-256-cbc -k "$super_secret_password" -in secrets.tar.enc -out secrets.tar -d
-  tar xvf secrets.tar -C /etc/ssl/odoossl
+# encrypt with: openssl aes-256-cbc -k public_key.pem -in secrets.tar -out secrets.tar -e
+if [ -n "$PRIVATE_KEY"  ]; then
+  openssl aes-256-cbc -k "$PRIVATE_KEY" -in secrets.tar.enc -out secrets.tar -d
+  tar xvf secrets.tar -C "$TMP"
 fi
+
+echo "-----------------------------------------------------------"
+echo "Installing ssl certificates"
+echo "-----------------------------------------------------------"
+mkdir -p /etc/nginx/ssl
+cp odoo_geoffreylooker_com.* /etc/nginx/ssl/ 
+chown -R root:root /etc/nginx/ssl
+chmod -R 600 /etc/nginx/ssl
 
 echo "-----------------------------------------------------------"
 echo "Finished Odoo installation"
