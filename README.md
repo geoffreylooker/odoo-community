@@ -3,8 +3,9 @@ odoo-community
   
 ### Quick Start  
 ----------------  
-    $ export SUPER_SECRET_PASSWORD="xxx"
-    $ curl -sf https://raw.githubusercontent.com/geoffreylooker/home/master/bootstrap_install.sh | bash
+    $ export DOMAIN="geoffreylooker.com"
+    $ export HOST="odoo.geoffreylooker.com"
+    $ curl -sf https://raw.githubusercontent.com/geoffreylooker/odoo-community/build.sh | bash
  
  
  
