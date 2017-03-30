@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 # Must be root to use this tool
 if [[ ! $EUID -eq 0 ]];then
   if [ -x "$(command -v sudo)" ];then
@@ -56,7 +58,7 @@ echo "-----------------------------------------------------------"
 echo "Configuring Postgres DB"
 echo "-----------------------------------------------------------"
 # avoid permissions error when starting service
-chmod 640 /etc/ssl/private/ssl-cert-snakeoil.key 
+#chmod 640 /etc/ssl/private/ssl-cert-snakeoil.key 
 systemctl enable postgresql
 service postgresql start
 
@@ -159,7 +161,7 @@ echo "Configuring Nginx"
 echo "-----------------------------------------------------------"
 cp resources/odoo-nginx.conf /etc/nginx/sites-available/odoo
 ln -sf /etc/nginx/sites-available/odoo /etc/nginx/sites-enabled/odoo
-chown root:www /etc/nginx/sites-available/odoo
+chown root:root /etc/nginx/sites-available/odoo
 chmod 640 /etc/nginx/sites-available/odoo
 # root:www 640?
 systemctl enable nginx
@@ -170,7 +172,7 @@ echo "Configuring Odoo Init File"
 echo "-----------------------------------------------------------"
 cp resources/odoo-init.sh /etc/init.d/odoo
 chmod 755 /etc/init.d/odoo
-chown root: /etc/init.d/odoo
+chown root:root /etc/init.d/odoo
 systemctl enable odoo
 service odoo restart
 
