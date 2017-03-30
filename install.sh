@@ -44,13 +44,20 @@ python -c "import odoo" && echo "odoo python module installed";
 # where should this go
 pip install -q --upgrade setuptools-odoo
 
-# and this?>
+echo "installing wkhtmltox"
 #cd /tmp
 curl -sO http://download.gna.org/wkhtmltopdf/0.12/0.12.4/wkhtmltox-0.12.4_linux-generic-amd64.tar.xz ;
-# ls
 tar -xvf wkhtmltox-0.12.4_linux-generic-amd64.tar.xz ;
 cp wkhtmltox/bin/wkhtmltopdf /usr/bin/ ;
 
+# Then tell pip where to find packages that are not on pypi:
+export PIP_FIND_LINKS="https://wheelhouse.odoo-community.org/oca"
+
+echo "installing odoo-oca-server-tools"
+pip install -r https://raw.githubusercontent.com/OCA/server-tools/10.0/requirements.txt
+
+pip install odoo10_addon_base_technical_features
+pip install odoo10_addon_auto_backup
 
 echo "finished $0"
 
