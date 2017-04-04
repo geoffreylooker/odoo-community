@@ -17,7 +17,7 @@ echo "-----------------------------------------------------------"
 echo "Installing dependencies/pip-packages.txt"
 echo "-----------------------------------------------------------"
 #sudo -H pip install -U -r dependencies/pip-packages.txt
-sudo -H pip install -U -r pysftp odoorpc
+sudo -H pip install -U pysftp odoorpc
 
 #echo "-----------------------------------------------------------"
 #echo "Installing dependencies/pip-url-requirement-files.txt"
