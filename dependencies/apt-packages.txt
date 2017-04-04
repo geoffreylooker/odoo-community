@@ -40,3 +40,10 @@ fontconfig
 libxrender1
 # for wkhtml install
 gdebi-core
+# odoo - stock-logistics-warehouse
+python-levenshtei
+# odoo - stock-logistics-warehouse, tracking, barcode
+python-levenshtein
+# odoo - hw_driver - Barcode Scanner Hardware Driver
+python-evdev
+
