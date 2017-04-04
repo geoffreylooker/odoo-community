@@ -4,7 +4,7 @@ set -e
 
 apt-get update -q
 
-xargs -a <(awk '/^\s*[^#]/' 'resources/apt-packages.txt') -r -- \
+xargs -a <(awk '/^\s*[^#]/' 'dependencies/apt-packages.txt') -r -- \
     apt-get install --no-install-recommends -yq
 
 # Remove unneeded files.
