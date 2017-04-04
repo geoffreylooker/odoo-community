@@ -50,14 +50,16 @@ pip install odoo10_addon_auto_backup
 # move following to apt-packages.txt
 # 30 March 2017
 # stock-logistics-warehouse
-python-levenshtei
+#python-levenshtei
 
 # 31 March 2017
 # stock-logistics-warehouse
 # stock-logistics-tracking
 # stock-logistics-barcode
-python-levenshtein
+#python-levenshtein
 
 # 31 March 2017
 # hw_driver - Barcode Scanner Hardware Driver
-python-evdev
+#python-evdev
+
+odooclient
