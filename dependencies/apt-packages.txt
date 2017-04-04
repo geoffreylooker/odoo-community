@@ -46,4 +46,8 @@ python-levenshtei
 python-levenshtein
 # odoo - hw_driver - Barcode Scanner Hardware Driver
 python-evdev
+# for web scraping product pages
+html2text
+# xidel is dependent on this.
+libssl-dev
 
