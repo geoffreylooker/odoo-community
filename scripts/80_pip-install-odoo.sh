@@ -2,6 +2,20 @@
 
 set -e
 
+# Setup locale. This prevents Python 3 IO encoding issues.
+export LANG=en_US.UTF-8
+
+echo "-----------------------------------------------------------"
+echo "Creating symlink for node"
+echo "-----------------------------------------------------------"
+ln -sf /usr/bin/nodejs /usr/bin/node
+
+echo "-----------------------------------------------------------"
+echo "Installing Less CSS using npm"
+echo "-----------------------------------------------------------"
+npm install -g less
+
+
 echo "-----------------------------------------------------------"
 echo "Start - Installing Pip-Packages Dependencies"
 echo "-----------------------------------------------------------"
