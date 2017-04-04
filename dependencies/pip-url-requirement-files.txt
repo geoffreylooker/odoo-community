@@ -1,0 +1,4 @@
+#
+https://raw.githubusercontent.com/odoo/odoo/10.0/requirements.txt
+https://raw.githubusercontent.com/odoo/oca/10.0/requirements.txt
+https://raw.githubusercontent.com/OCA/server-tools/10.0/requirements.txt
