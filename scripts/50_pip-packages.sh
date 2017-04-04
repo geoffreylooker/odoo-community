@@ -10,7 +10,7 @@ sudo pip install -U pip virtualenv
 echo "-----------------------------------------------------------"
 echo "Installing virtualenv, setuptools & setuptools-odoo"
 echo "-----------------------------------------------------------"
-sudo pip install -U setuptools setuptools-odoo 
+sudo pip install -U setuptools
 sudo pip install -U setuptools-odoo 
 
 echo "-----------------------------------------------------------"
