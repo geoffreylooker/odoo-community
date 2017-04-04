@@ -5,12 +5,13 @@ set -e
 echo "-----------------------------------------------------------"
 echo "Start - Installing Pip-Packages Dependencies"
 echo "-----------------------------------------------------------"
-sudo pip install -U pip
+sudo pip install -U pip virtualenv
 
 echo "-----------------------------------------------------------"
 echo "Installing virtualenv, setuptools & setuptools-odoo"
 echo "-----------------------------------------------------------"
-sudo pip install -U virtualenv setuptools setuptools-odoo 
+sudo pip install -U setuptools setuptools-odoo 
+sudo pip install -U setuptools-odoo 
 
 echo "-----------------------------------------------------------"
 echo "Installing dependencies/pip-packages.txt"
