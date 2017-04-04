@@ -21,6 +21,8 @@ odoo = odoorpc.ODOO('localhost', port=8069)
 
 odoo.db.create("$admpwd", "$dbname", False, 'en_US', "$usrpwd") 
 
+odoo.db.list() 
+
 ##odoo.db.change_password('super_admin_passwd', 'new_admin_passwd') 
 #odoo.db.drop('super_admin_passwd', 'test') 
 #dump = odoo.db.dump('super_admin_passwd', 'prod') 
