@@ -31,7 +31,12 @@ fi
 echo "-----------------------------------------------------------"
 echo "Checking Packages Dependencies"
 echo "-----------------------------------------------------------"
-./scripts/install-apt-packages.sh
+#./scripts/install-apt-packages.sh
+for FILE in scripts/*; do
+  if [ -f "$FILE" ]; then
+    source "$FILE"
+  fi
+done
 
 echo "-----------------------------------------------------------"
 echo "Checking odoo user & log directory"
