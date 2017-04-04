@@ -1,65 +1,44 @@
 # pip 
-#
-# this is working list compiled after initial install.
-#
-# TODO: move apt packages to apt-packages.txt 
-#
-
-# 30 March 2017
-# handy but not hard dependency
-virtualenv
-
-# to be able to install binaries
-setuptools
-setuptools-odoo 
-
-# auto_backup (binary)
+#virtualenv
+#setuptools
+#setuptools-odoo 
 pysftp
-
-#########
-
-echo "-----------------------------------------------------------"
-echo "Installing pip, virtualenv, setuptools-odoo & pysftp"
-echo "-----------------------------------------------------------"
-pip install --upgrade pip virtualenv
-pip install --no-cache-dir setuptools 
-pip install --no-cache-dir setuptools-odoo 
-pip install --no-cache-dir pysftp
-
-echo "-----------------------------------------------------------"
-echo "Installing Odoo 10.0 from nightly build"
-echo "-----------------------------------------------------------"
-pip install -r https://raw.githubusercontent.com/odoo/odoo/10.0/requirements.txt
-pip install https://nightly.odoo.com/10.0/nightly/src/odoo_10.0.latest.zip
+#
+#
+#echo "-----------------------------------------------------------"
+#echo "Installing Odoo 10.0 from nightly build"
+#echo "-----------------------------------------------------------"
+#pip install -r https://raw.githubusercontent.com/odoo/odoo/10.0/requirements.txt
+#pip install https://nightly.odoo.com/10.0/nightly/src/odoo_10.0.latest.zip
 # python -c "import odoo"
 # pip list | grep odoo ;
-
-echo "-----------------------------------------------------------"
-echo "Installing Odoo 10.0 OCA addons"
-echo "-----------------------------------------------------------"
-export PIP_FIND_LINKS="https://wheelhouse.odoo-community.org/oca"
-pip install -r https://raw.githubusercontent.com/OCA/server-tools/10.0/requirements.txt
-pip install odoo10_addon_base_technical_features
-
-pip install pysftp
-pip install odoo10_addon_auto_backup
-
+#
+#echo "-----------------------------------------------------------"
+#echo "Installing Odoo 10.0 OCA addons"
+#echo "-----------------------------------------------------------"
+#export PIP_FIND_LINKS="https://wheelhouse.odoo-community.org/oca"
+#pip install -r https://raw.githubusercontent.com/OCA/server-tools/10.0/requirements.txt
+#pip install odoo10_addon_base_technical_features
+#
+#pip install pysftp
+#pip install odoo10_addon_auto_backup
+#
 #######
-
-
+#
+#
 # move following to apt-packages.txt
 # 30 March 2017
 # stock-logistics-warehouse
 #python-levenshtei
-
+#
 # 31 March 2017
 # stock-logistics-warehouse
 # stock-logistics-tracking
 # stock-logistics-barcode
 #python-levenshtein
-
+#
 # 31 March 2017
 # hw_driver - Barcode Scanner Hardware Driver
 #python-evdev
-
+#
 odooclient
