@@ -8,8 +8,8 @@ echo "-----------------------------------------------------------"
 
 
 dbname='odoo-10-prd'
-admpwd="${ODOO_ADMIN_PWD}"
-usrpwd="${ODOO_ADMIN_PWD}"
+admpwd=${ODOO_ADMIN_PWD}
+usrpwd=${ODOO_ADMIN_PWD}
 
 python <<EOF
 #!/usr/bin/python
