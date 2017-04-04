@@ -22,12 +22,13 @@ LOGFILE=/var/log/odoo/odoo.log
 PIDFILE=/var/run/${NAME}.pid
 USER=odoo
 export LOGNAME=$USER
+DAEMON_OPT=${CONFIG}
 
 test -x $DAEMON || exit 0
 set -e
 
 function _start() {
-    start-stop-daemon --start --quiet --pidfile $PIDFILE --chuid $USER:$USER --background --make-pidfile --exec $DAEMON -- --config $CONFIG --logfile $LOGFILE
+    start-stop-daemon --start --quiet --pidfile $PIDFILE --chuid $USER:$USER --background --make-pidfile --exec $DAEMON -- -c $DAEMON_OPT
 }
 
 function _stop() {
@@ -39,8 +40,6 @@ function _status() {
     start-stop-daemon --status --quiet --pidfile $PIDFILE
     return $?
 }
-
-
 case "$1" in
         start)
                 echo -n "Starting $DESC: "
@@ -69,5 +68,4 @@ case "$1" in
                 exit 1
                 ;;
 esac
-
 exit 0
