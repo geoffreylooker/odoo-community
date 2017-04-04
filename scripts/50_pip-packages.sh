@@ -22,7 +22,7 @@ echo "-----------------------------------------------------------"
 echo "Installing dependencies/pip-url-requirement-files.txt"
 echo "-----------------------------------------------------------"
 xargs -a <(awk '/^\s*[^#]/' 'dependencies/pip-url-requirement-files.txt') -r -- \
-    sudo pip install -r '{}'
+    sudo pip install -r 
 
 echo "-----------------------------------------------------------"
 echo "Finished - Installing Pip-Packages Dependencies"
