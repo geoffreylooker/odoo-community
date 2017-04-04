@@ -38,3 +38,5 @@ nginx
 # wkhtmktopdf dependencies
 fontconfig
 libxrender1
+# for wkhtml install
+gdebi-core
