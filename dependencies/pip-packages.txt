@@ -41,4 +41,4 @@ pysftp
 # hw_driver - Barcode Scanner Hardware Driver
 #python-evdev
 #
-odooclient=>0.5.1
+odooclient==0.5.1
