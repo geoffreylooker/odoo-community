@@ -35,7 +35,7 @@ echo "-----------------------------------------------------------"
 echo "Checking Packages Dependencies"
 echo "-----------------------------------------------------------"
 #./scripts/install-apt-packages.sh
-for FILE in scripts/*; do
+for FILE in scripts/*.sh; do
   if [ -f "$FILE" ]; then
     source "$FILE"
   fi
