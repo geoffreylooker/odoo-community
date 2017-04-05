@@ -18,6 +18,12 @@ cp resources/odoo-nginx.conf /etc/nginx/sites-available/odoo
 ln -sf /etc/nginx/sites-available/odoo /etc/nginx/sites-enabled/odoo
 chown root:root /etc/nginx/sites-available/odoo
 chmod 640 /etc/nginx/sites-available/odoo
+
+# delete default configuration:
+pushd /etc/nginx/sites-enabled/
+rm default
+popd
+
 # root:www 640?
 systemctl enable nginx
 service nginx restart
