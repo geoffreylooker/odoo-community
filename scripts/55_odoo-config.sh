@@ -8,7 +8,7 @@ echo "-----------------------------------------------------------"
 
 cat >/opt/odoo/odoo.conf<<EOF
 [options]
-admin_passwd = ${ODOO_ADMIN_PWD}
+;admin_passwd = ${ODOO_ADMIN_PWD}
 ;db_name = 
 db_host = False
 db_port = False
