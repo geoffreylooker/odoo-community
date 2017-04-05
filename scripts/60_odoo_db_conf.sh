@@ -8,6 +8,7 @@ echo "-----------------------------------------------------------"
 
 
 dbname=odoo-10-prd
+#admpwd=${ODOO_ADMIN_PWD}
 admpwd=${ODOO_ADMIN_PWD}
 usrpwd=${ODOO_ADMIN_PWD}
 
@@ -19,11 +20,12 @@ import odoorpc
 # Prepare the connection to the server
 odoo = odoorpc.ODOO('localhost', port=8069)
 
-odoo.db.create("$admpwd", "$dbname", False, 'en_US', "$usrpwd") 
+odoo.db.create('admin', "$dbname", False, 'en_US', "$usrpwd") 
 
 odoo.db.list() 
 
-##odoo.db.change_password('super_admin_passwd', 'new_admin_passwd') 
+# odoo.db.change_password('admin', 'new_admin_passwd') 
+
 #odoo.db.drop('super_admin_passwd', 'test') 
 #dump = odoo.db.dump('super_admin_passwd', 'prod') 
 #odoo.db.duplicate('super_admin_passwd', 'prod', 'test') 
