@@ -196,3 +196,14 @@ if __name__ == "__main__":
 EOF
 }
 #########
+
+python <<EOF
+#!/usr/bin/python
+import odoorpc
+odoo = odoorpc.ODOO('localhost', port=8069)
+odoo.login('odoo-10-prd', 'admin', "$DB_PWD")
+Module = odoo.env['ir.module.module']
+module_id = Module.search([('name', '=', 'dashboards')])
+Module.button_immediate_install(module_id)
+EOF
+
