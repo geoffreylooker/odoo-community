@@ -9,3 +9,12 @@ exists()
         return 1
     fi
 }
+
+# if ! exists xxx; then
+    # sudo apt-get update; sudo apt-get install xxx;
+# else 
+    # echo "gcsfuse already installed"
+# fi
+ 
+ 
+ 
