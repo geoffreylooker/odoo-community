@@ -1,5 +1,9 @@
 #!/bin/bash
 
+config_path = os.path.abspath(os.path.join(os.getcwd(), 'config.ini'))
+#sample_task = "python -u %s" % script_path
+
+
 get_odoorpc_config_property () 
 { 
     SECTION=\'$1\';
