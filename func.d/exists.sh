@@ -34,3 +34,10 @@ else
     echo "gcsfuse already installed";
 fi
  
+# sudo nano /etc/fstab
+## gceprd-test /mnt/test gcsfuse rw,allow_other,uid=1001,gid=1002,suid,dev,implicit_dirs
+# sudo mount /mnt/test
+# sudo fusermount -u /mnt/test
+## my-bucket /mount/point gcsfuse rw,noauto,user,key_file=/path/to/key.json
+
+
