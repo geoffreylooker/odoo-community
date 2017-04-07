@@ -18,3 +18,19 @@ exists()
  
  
  
+gcsfuse_apt_install()
+{
+  echo "installing gcsfuse..."
+  echo "deb http://packages.cloud.google.com/apt gcsfuse-$(lsb_release -s -c) main" | sudo tee /etc/apt/sources.list.d/gcsfuse.list
+  curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+  sudo apt-get update -yq
+  sudo apt-get install gcsfuse -yq
+  echo "finished installing gcsfuse..."
+}
+
+if ! exists gcsfuse; then
+    gcsfuse_apt_install;
+else 
+    echo "gcsfuse already installed";
+fi
+ 
