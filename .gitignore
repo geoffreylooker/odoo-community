@@ -7,6 +7,12 @@ secrets.tar
 *.pem
 !public_key.pem
 *.env
+gceprd-0a2dec567405.json
+credentials.json
+*.key
+*.crt
+*.ca-bundle
+*.ini
 
 #ignore objects and archives, anywhere in the tree.
 #*.[oa]
